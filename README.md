@@ -1,15 +1,12 @@
 # aquafreshwaterkarachi
 <body>
-
-    <h1>Aquafresh Water Karachi</h1>
+ <h1>Aquafresh Water Karachi</h1>
     <p>Saaf paani Karachi mein</p>
-
-    <!-- WhatsApp Button -->
+  <!-- WhatsApp Button -->
     <a href="https://wa.me/923002427705" target="_blank"
        style="position:fixed; bottom:20px; right:20px;">
         <img src="https://img.icons8.com/color/48/000000/whatsapp.png"/>
     </a>
-
 </body>
 <!DOCTYPE html>
 <html>
