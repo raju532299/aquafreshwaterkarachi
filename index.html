@@ -14,7 +14,7 @@ body {
 header {
   background: #0077b6;
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -26,11 +26,11 @@ header {
   background: linear-gradient(to right, #00b4d8, #0077b6);
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .section {
-  padding: 20px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -42,23 +42,49 @@ header {
 
 .card {
   background: white;
-  margin: 10px;
-  padding: 15px;
+  margin: 15px;
+  padding: 20px;
   width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .contact {
   background: #caf0f8;
-  padding: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #0077b6;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #023e8a;
 }
 
 footer {
   background: #0077b6;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
 }
 
 /* WhatsApp Button */
@@ -66,9 +92,9 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: green;
+  background: #25D366;
   color: white;
-  padding: 12px 15px;
+  padding: 12px 18px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
@@ -80,8 +106,7 @@ footer {
 <body>
 
 <header>
-  <!-- Aapka image link yahan -->
-  <img src="https://i.postimg.cc/5tMc8cy0/file-0000000099b871fa94281d031728d2e3.png" class="logo" alt="Aqua Fresh Banner">
+  <img src="https://i.postimg.cc/5tMc8cy0/file-0000000099b871fa94281d031728d2e3.png" class="logo">
   <h2>Aqua Fresh Karachi</h2>
   <p>Pure & Safe Drinking Water</p>
 </header>
@@ -96,17 +121,17 @@ footer {
 
   <div class="cards">
     <div class="card">
-      <h3>?? RO Water</h3>
+      <h3>💧 RO Water</h3>
       <p>High quality drinking water</p>
     </div>
 
     <div class="card">
-      <h3>? UV Treatment</h3>
+      <h3>🛡️ UV Treatment</h3>
       <p>Advanced purification</p>
     </div>
 
     <div class="card">
-      <h3>?? Home Delivery</h3>
+      <h3>🚚 Home Delivery</h3>
       <p>Fast delivery service</p>
     </div>
   </div>
@@ -115,16 +140,17 @@ footer {
 <div class="contact">
   <h2>Order Now</h2>
 
-  <form>
-    <input type="text" placeholder="Your Name" required><br><br>
-    <input type="text" placeholder="Phone Number" required><br><br>
-    <input type="text" placeholder="Address" required><br><br>
+  <form onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+    <input type="text" id="phone" placeholder="Phone Number" required><br><br>
+    <input type="text" id="address" placeholder="Address" required><br><br>
     <button type="submit">Submit Order</button>
   </form>
 
   <h3>Contact</h3>
-  <p>Malik Arshad</p>
-  <p>?? 0300-2427705</p>
+  <p>👤 Malik Arshad</p>
+  <p>📞 0300-2427705</p>
+  <p>💬 WhatsApp Available</p>
 </div>
 
 <!-- Google Map -->
@@ -137,8 +163,22 @@ width="100%" height="250"></iframe>
 
 <!-- WhatsApp Button -->
 <a class="whatsapp" href="https://wa.me/923002427705" target="_blank">
-  WhatsApp
+  💬 Chat Now
 </a>
+
+<script>
+function sendToWhatsApp(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+
+  let message = `New Order:%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
+
+  window.open(`https://wa.me/923002427705?text=${message}`, '_blank');
+}
+</script>
 
 </body>
 </html>
